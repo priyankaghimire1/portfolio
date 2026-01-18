@@ -1,0 +1,361 @@
+        :root {
+            --color1: #fcf7f1;
+            --color2: #285a71;
+            --color3: #2197bd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .whole {
+            min-height: 100vh;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+
+        .see-all {
+            display: block;
+            margin-right: auto;
+            margin-left: 0;
+            width: fit-content;
+            text-decoration: none;
+            color: var(--color2);
+            font-weight: 800;
+            padding: 10px 0;
+            align-self: flex-end;
+            transition: all 0.3s ease;
+        }
+
+        .arrow {
+            height: 20px;
+            padding-top: 4px;
+            transform: scaleX(-1);
+        }
+
+        .see-all:hover {
+            color: var(--color3);
+        }
+
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .title {
+            color: var(--color2);
+            font-size: clamp(28px, 5vw, 35px);
+            line-height: 1.5;
+            font-weight: 800;
+        }
+
+        .project-color {
+            background-color: var(--color1);
+            padding: 50px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-column-gap: 50px;
+            gap: 20px;
+            width: 100%;
+            padding: 20px;
+            justify-content: space-evenly;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 400px;
+            overflow: hidden;
+            max-width: 350px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-name {
+            color: var(--color2);
+            padding: 15px 20px 10px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .see-more-container {
+            padding: 0 20px 20px;
+        }
+
+        .see-more {
+            display: inline-block;
+            background-color: var(--color2);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .see-more:hover {
+            background-color: var(--color3);
+            cursor: pointer;
+        }
+
+        /* Popup Styles */
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 850px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--color2);
+            font-weight: 700;
+            z-index: 10;
+            background: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-close:hover {
+            color: var(--color3);
+        }
+
+        .popup-title {
+            color: var(--color2);
+            padding: 15px 40px 15px 15px;
+            font-weight: 700;
+            font-size: clamp(18px, 3vw, 24px);
+            line-height: 1.3;
+        }
+
+        .popup-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .popup-image {
+            max-width: 100%;
+            width: auto;
+            max-height: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .popup-inside {
+            padding: 0 20px;
+            line-height: 1.8;
+        }
+
+        .popup-inside p {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .popup-color {
+            color: var(--color2);
+            font-weight: 600;
+            display: inline;
+        }
+
+        .popup-inside a {
+            color: var(--color3);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .popup-inside a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            .whole {
+                padding: 30px;
+            }
+
+            .project-color {
+                padding: 30px;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 25px;
+            }
+
+            .project-card {
+                min-height: 450px;
+            }
+
+            .project-image-container {
+                height: 280px;
+            }
+
+            .popup-flex {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .popup-image {
+                max-width: 400px;
+                max-height: 400px;
+                flex-shrink: 0;
+            }
+
+            .popup-inside {
+                padding: 20px;
+                flex: 1;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            .whole {
+                padding: 40px;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 30px;
+            }
+
+            .project-card {
+                min-height: 480px;
+            }
+
+            .project-image-container {
+                height: 300px;
+            }
+        }
+
+        /* Large Desktop */
+        @media (min-width: 1200px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Mobile Portrait */
+        @media (max-width: 480px) {
+            .whole {
+                padding: 15px;
+            }
+
+            .project-color {
+                padding: 15px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .project-card {
+                min-height: 350px;
+            }
+
+            .project-image-container {
+                height: 200px;
+            }
+
+            .project-name {
+                font-size: 14px;
+                padding: 12px 15px 8px;
+            }
+
+            .see-more-container {
+                padding: 0 15px 15px;
+            }
+
+            .see-more {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+
+            .popup-content {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            .popup-title {
+                padding: 10px 35px 10px 10px;
+                font-size: 18px;
+            }
+
+            .popup-inside {
+                padding: 0 10px;
+            }
+
+            .popup-close {
+                width: 35px;
+                height: 35px;
+                font-size: 24px;
+                top: 8px;
+                right: 8px;
+            }
+        }
+     
